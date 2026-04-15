@@ -1,0 +1,267 @@
+/* ============================
+   Todo App — Case Study Styles
+   ============================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #211F1F;
+  color: #c8c8c8;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ---- Wrapper ---- */
+.cs-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ---- Hero ---- */
+.cs-hero {
+  margin-bottom: 3.5rem;
+  border-left: 3px solid #ffff;
+  padding-left: 1.5rem;
+}
+
+.cs-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffff;
+  background: #0000;
+  border: 1px solid #ffff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.cs-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #e0e0e0;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.cs-subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.cs-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cs-meta span {
+  font-size: 0.8rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---- Section ---- */
+.cs-section {
+  margin-bottom: 20px;
+}
+
+.cs-section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #ffff;
+}
+
+.cs-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d4d4d4;
+  margin-bottom: 0.4rem;
+}
+
+.cs-section p {
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.cs-section em {
+  color: #c8c8c8;
+  font-style: italic;
+}
+
+.cs-section strong {
+  color: #c8c8c8;
+  font-weight: 600;
+}
+
+/* ---- Two Column Cards (Problem) ---- */
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+@media (max-width: 500px) {
+  .cs-two-col { grid-template-columns: 1fr; }
+}
+
+.cs-card {
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.cs-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.cs-card p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+.cs-card--red {
+  background: #0000;
+  border-color: #ffff;
+}
+
+.cs-card--red h3 { color: #ffff; }
+.cs-card--red p  { color: #ffff; }
+
+.cs-card--muted {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.07);
+}
+
+.cs-card--muted h3 { color: #aaa; }
+.cs-card--muted p  { color: #666; }
+
+/* ---- Feature Row ---- */
+.cs-feature {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin: 1.8rem 0 0.8rem;
+}
+
+.cs-feature-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: #0000;
+  border: 1px solid #ffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #ffff;
+  margin-top: 2px;
+}
+
+.cs-feature h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d4d4d4;
+  margin-bottom: 0.35rem;
+}
+
+.cs-feature p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0;
+}
+
+/* ---- Screenshot Blocks ---- */
+.cs-img-block {
+  margin: 1.2rem 0 2rem;
+}
+
+/* No fixed height — it grows with the image naturally */
+.cs-img-placeholder {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cs-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.cs-img-caption {
+  font-size: 0.78rem;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ---- Divider ---- */
+.cs-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin: 2.5rem 0;
+}
+
+/* ---- Learnings Grid ---- */
+.cs-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cs-learn-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.cs-learn-num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffff;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.cs-learn-card p {
+  font-size: 0.88rem;
+  color: #888;
+  margin: 0;
+}
+
+.cs-learn-card strong {
+  color: #bbb;
+}
+
+/* ---- Conclusion ---- */
+.cs-conclusion p {
+  font-size: 1.05rem;
+  color: #aaa;
+  line-height: 1.8;
+}
