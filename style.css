@@ -32,6 +32,7 @@ nav{
     justify-content: flex-end;
     gap: 36px;
     padding: 0 80px;
+    z-index: 100;
 }
 nav a{
     font-family: 'Inter', sans-serif;
@@ -260,8 +261,9 @@ ul{
 .tech-1, .tech-2, .tech-3, .tech-4 {
     width: 137px;
     height: 137px;
-    background-color: var(--pink);
+    background-color: #2a2828;
     border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 .design{
     width: 350px;
@@ -273,8 +275,9 @@ ul{
 .design-1, .design-2, .design-3, .design-4 {
     width: 137px;
     height: 137px;
-    background-color: var(--pink);
+    background-color: #2a2828;
     border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ---- Box link & labels ---- */
@@ -298,7 +301,7 @@ ul{
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #e0e0e0;
+    color: var(--pink);
     letter-spacing: 0.05em;
 }
 .box-type {
@@ -352,4 +355,366 @@ ul{
 }
 .modal-close:hover {
     color: var(--pink);
+}
+
+
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+
+#experience {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 80px;
+}
+
+#experience h1 {
+    padding-top: 85px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 6.3vw;
+    font-weight: 900;
+    margin-top: 0;
+    line-height: 1;
+}
+
+.exp-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 14px;
+    margin-bottom: 50px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem;
+}
+
+.exp-card {
+    background-color: #2a2828;
+    border-radius: 18px;
+    padding: 1.6rem 1.6rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: default;
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(191, 102, 141, 0.2), transparent 65%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px) scale(1.015);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--pink);
+    border-color: var(--pink);
+}
+
+.exp-card:hover::before {
+    opacity: 1;
+}
+
+.card-tag {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.7rem;
+    border-radius: 50px;
+    margin-bottom: 0.9rem;
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.card-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #c990aa;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.card-divider {
+    width: 32px;
+    height: 2px;
+    background: var(--pink);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+.card-list {
+    list-style: none;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.83rem;
+    color: #b0b0b0;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.card-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-size: 0.7rem;
+    top: 3px;
+}
+
+.ongoing-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 6px rgba(74, 222, 128, 0.7);
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+
+/* ============================================
+   CONTACT SECTION  — two-column, one viewport
+   ============================================ */
+
+#contact {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding-top: var(--nav-height);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    gap: 80px;
+}
+
+/* ── LEFT COLUMN: heading + subtitle + socials ── */
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+#contact h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 6.3vw;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    
+}
+
+.contact-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 50px;
+}
+
+/* ── Social links ── */
+.contact-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-social-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.contact-social-link:hover {
+    transform: translateX(6px);
+}
+
+.contact-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #2a2828;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-social-link:hover .contact-icon-wrap {
+    background-color: var(--pink);
+    border-color: var(--pink);
+    color: #fff;
+}
+
+.contact-social-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.contact-social-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-social-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.contact-social-link:hover .contact-social-value {
+    color: #fff;
+}
+
+/* ── RIGHT COLUMN: form ── */
+.contact-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.38);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #2a2828;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    padding: 0.65rem 0.9rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.16);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: rgba(191, 102, 141, 0.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(191, 102, 141, 0.12);
+}
+
+/* ── Submit button ── */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--pink);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.6rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.contact-btn i {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: #a8547a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(191, 102, 141, 0.35);
+}
+
+.contact-btn:hover i {
+    transform: translateX(4px);
+}
+
+.contact-btn:active {
+    transform: translateY(0);
 }
