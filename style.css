@@ -493,20 +493,6 @@ ul{
     top: 3px;
 }
 
-.ongoing-dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 6px rgba(74, 222, 128, 0.7);
-    margin-right: 5px;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
-}
-
-
 /* ============================================
    CONTACT SECTION  — two-column, one viewport
    ============================================ */
